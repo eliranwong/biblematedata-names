@@ -73,3 +73,92 @@ This project is to map biblical names in [biblematedata](https://github.com/elir
    - Enforced exact `PEOPLERELATIONSHIP_SC` names by `PersonID` across all `<h2 exlbp="...">` headers, `<ref onclick="exlbp('BP...')">` links, and `父母：` fields (**0** mismatches).
    - Exported the Simplified Chinese name meanings dictionary as `name_meanings_sc` in `scripts/name_meanings_sc.py` (**3,163** entries).
 
+## Chinese Translation and Localization of Verse Index in `indexes2.sqlite`
+
+`indexes2.sqlite` stores biblical verse-level index data linking verses to characters (`exlbp`), locations (`exlbl`), and topics (`exlbt`). The `exlbp` table was duplicated and localized into `exlbp_tc` and `exlbp_sc` (**21,022** rows each, covering all **53,693** person occurrences across 3,073 unique `PersonID`s):
+
+1. **Table Creation:**
+   - Created `exlbp_tc` and `exlbp_sc` with matching schema `(Book INT, Chapter INT, Verse INT, Information TEXT)`.
+2. **Traditional Chinese Mapping (`exlbp_tc`):**
+   - Replaced all English character names inside `<ref onclick="exlbp('BP{PersonID}')">{Name}</ref>` with their exact Traditional Chinese `Name` from `PEOPLERELATIONSHIP_TC` mapped by `PersonID`, complemented by standard CUV designations for indexing IDs (7000, 7100, 7200, 7300, 7500, etc.) identical to `exlb3.data`.
+   - **0** unmapped `PersonID`s and **0** remaining English name occurrences.
+3. **Simplified Chinese Mapping (`exlbp_sc`):**
+   - Replaced all character names inside `<ref onclick="exlbp('BP{PersonID}')">{Name}</ref>` with their exact Simplified Chinese `Name` from `PEOPLERELATIONSHIP_SC` mapped by `PersonID` (with CUV Simplified indexing titles for 7000–7500).
+   - **0** unmapped `PersonID`s and **0** remaining English name occurrences.
+
+## Chinese Translation and Localization of Location Verse Index in `indexes2.sqlite`
+
+The location index table `exlbl` was duplicated and localized into `exlbl_tc` and `exlbl_sc` (**4,430** rows each, covering all **6,941** location occurrences across 1,133 unique `BL` location IDs):
+
+1. **Table Creation:**
+   - Created `exlbl_tc` and `exlbl_sc` with matching schema `(Book INT, Chapter INT, Verse INT, Information TEXT)`.
+2. **Multi-Stage Mapping Pipeline:**
+   - **Same-Verse & English Match:** Matched `(Book, Chapter, Verse)` and surface location name against `names_english_chinese.py`, resolving **5,254** occurrences (**75.7%**) directly.
+   - **Canonical & CUV-Verified Aliases:** Cross-referenced canonical location names from `exlbli` (`exlb3.data`) and global name frequencies against CUV verse text (`CUV.bible`) to map an additional **1,141** occurrences.
+   - **Exhaustive CUV Verification:** Resolved the remaining 248 location IDs by extracting exact biblical place names directly from CUV verse text (e.g. `BL202` → `伯特利`/`伯特利`, `BL986` → `紅海`/`红海`, `BL1021` → `鹽海`/`盐海`, `BL234` → `伯‧示麥`/`伯‧示麦`, `BL701` → `基列‧耶琳`/`基列‧耶琳`, `BL861` → `橄欖山`/`橄榄山`), with demonyms (`Egyptians` → `埃及人`, `Midianites` → `米甸人`) and generic terms (`river` → `大河`, `city` → `城`, `quicksands` → `賽耳底沙灘`) handled with contextual accuracy.
+3. **Traditional & Simplified Alignment:**
+   - Converted all Traditional Chinese names to Simplified Chinese using the project's comprehensive 725-character biblical Chinese orthographic mapping.
+   - Fixed historical closing tag typos (`</exlbp></ref>`) to well-formed `<ref onclick="exlbl('BL...')">...</ref>`.
+   - **Final state:** All **4,430** rows and **6,941** references in `exlbl_tc` and `exlbl_sc` mapped to Chinese with **0** remaining English letters or unmapped references.
+
+## Chinese Location Coordinates & Dictionary Localization (`bible_locations_*.py`, `tsv/bible_locations.tsv`, and `exlb3.data` `exlbl_tc` / `exlbl_sc`)
+
+1. **Location Coordinates Mapping (`bible_locations_tc.py`, `bible_locations_sc.py`, and `tsv/bible_locations.tsv`):**
+   - Replaced all **1,147** location entries in `scripts/bible_locations_tc.py` (`BIBLE_LOCATIONS_TC`) and `scripts/bible_locations_sc.py` (`BIBLE_LOCATIONS_SC`) with their exact Traditional and Simplified Chinese names mapped by `LocationID` (`BL1`–`BL1274`), preserving exact coordinates `(Name, Latitude, Longitude)`.
+   - Exported `tsv/bible_locations.tsv` with six columns (`LocationID`, `English`, `Traditional Chinese`, `Simplified Chinese`, `Latitude`, `Longitude`).
+2. **Data Fixes in `exlbl` (`exlb3.data`):**
+   - Fixed **68** rows where `<td bgcolor="#FFFFFF"><p><b>` contained an extra `<p>` tag before `<b>` (which previously caused `locations_query.py`'s `<td bgcolor="#FFFFFF"><b>(.*?)</b>` parser to miss the dictionary section).
+   - Fixed heading typos (`BL1021` `Salt Ssea` → `Salt Sea`, `BL529` `Har'nepher.` → `Ha'rod.`) and replaced **34** mismatched, truncated, or person-only dictionary articles (`BL45`, `BL53`, `BL109`, `BL111`, `BL117` *Atharim* [was *Spain*], `BL151`, `BL152`, `BL180` *Berothai* [was *Beeroth*], `BL189` *Beth-Arbel* [was *Beth-haram*], `BL262`, `BL286` *Brook Cherith* [was *Cheran*], `BL301` *City of Destruction*, `BL302` *City of Salt*, `BL414` *Rock Etam*, `BL427` *Appii Forum* [was *Apace*], `BL679`, `BL695` *Kirjathaim* [was *Kirjath-jearim*], `BL735`, `BL757`, `BL834` *Mount Ephron*, `BL858` *Mount Zalmon*, `BL944` *Phoenicia*, `BL1029` *Sea of Chinnereth*, `BL1032` *Sea of Galilee*, `BL1034` *Sea of Tiberias*, `BL1066` *Shaveh Kiriathaim*, `BL1088` *Land of Shual*, `BL1097` *Wilderness of Sin*, `BL1118` *Shushan*, `BL1130` *Plain of Tabor*, `BL1200` *Valley of Berachah*, `BL1202` *Valley of Eshcol*, `BL1245` *Zeboim*, and `BL1268` *Ziphron* [was *Sibraim*]) with their authentic *Smith's Bible Dictionary* and *ISBE* geographical entries.
+3. **Traditional & Simplified Chinese Location Dictionary (`exlbl_tc` and `exlbl_sc` in `exlb3.data`):**
+   - Duplicated `exlbl` into `exlbl_tc` and `exlbl_sc` (**1,161** rows each).
+   - Translated all **1,101** unique geographical dictionary descriptions into Traditional Chinese using CUV terminology while preserving all inline `<ref onclick="cr(...)">` Scripture references (with CUV book names) and `<hu>`/`<gu>` Hebrew/Greek text tags.
+   - Converted `exlbl_tc` to Simplified Chinese (`exlbl_sc`) via `opencc` (`t2s.json`).
+   - Enforced exact mapped Traditional and Simplified Chinese location names in both `<h1 class="window"><ref onclick='searchEntry("EXLBL", "...")'>...</ref></h1>` and `<td bgcolor="#FFFFFF"><b>(.*?)</b>` across all **1,161** rows (**0** mismatches).
+
+## Biblical Persons Dataset (`tsv/bible_persons.tsv`)
+
+Extracted and generated `tsv/bible_persons.tsv` from `biblePeople.data` with four tab-separated columns (`PersonID`, `English`, `Traditional Chinese`, `Simplified Chinese`):
+- Contains all **3,085** biblical character entries from `PEOPLERELATIONSHIP` (where `Relationship = "[Reference]"`), joined with `PEOPLERELATIONSHIP_TC` and `PEOPLERELATIONSHIP_SC`.
+- Includes `PersonID 7500` (*The Angel* / `使者`) from `PEOPLE`, `PEOPLE_TC`, and `PEOPLE_SC` to ensure complete character coverage.
+- Serves as the authoritative character name translation table across the entire workspace (**3,086** total entries).
+
+## Alignment of Bible Names Dictionary (`bible_names.py`)
+
+Standardized the dictionary keys in `scripts/bible_names.py` (*Hitchcock's Bible Names Dictionary*) to align with the authoritative English names used in `tsv/bible_locations.tsv` and `tsv/bible_persons.tsv`:
+- **Alignment Metrics:**
+  - Total original entries: **2,623** lines (**2,619** unique keys).
+  - Exact matches before alignment: **2,016** keys.
+  - Aligned / updated keys: **162** entries (**+162 new exact matches**, raising total exact matches to **2,178**).
+- **Categories of Alignment:**
+  1. **Case Standardizations (22 keys):** Converted all-caps compound words to standard hyphenated casing (e.g. `Adoni-Bezek` → `Adoni-bezek`, `Ebed-Melech` → `Ebed-melech`, `Evil-Merodach` → `Evil-merodach`, `Merodach-Baladan` → `Merodach-baladan`).
+  2. **Hyphenation & Punctuation Alignments (36 keys):** Standardized single-word vs. hyphenated spellings and punctuation (e.g. `Beersheba` → `Beer-Sheba`, `Benhadad` → `Ben-hadad`, `Ammi-Nadab` → `Amminadab`, `Aristobulus` → `Aristobulus'`).
+  3. **Location Slash Aliases (33 keys):** Mapped dual-named / compound location references where only one form existed in the dictionary (e.g. `Abel-Meholah` → `Abel-Meholah/Abelmeholah`, `Areopagus` → `Areopagus/Mars Hill`, `Arpad` → `Arpad/Arphad`, `Tyre` → `Tyre/Tyrus`).
+  4. **Orthographic & Systematic Spelling Alignments (66 keys):** Unified archaic KJV spellings with modern biblical transcriptions without key collisions (e.g. `Abidah` → `Abida`, `Alpheus` → `Alphaeus`, `Arimathea` → `Arimathaea`, `Bartimeus` → `Bartimaeus`, `Zaccheus` → `Zacchaeus`).
+  5. **Composite Person Slash Aliases (5 added entries):** Preserved distinct individual entries while adding combined slash keys for characters whose names changed across scripture (`Abram / Abraham`, `Jacob / Israel`, `Sarai / Sarah`, `Saul / Paul`, `Simon / Peter`).
+- All changes are itemized with justification and reference IDs in `scripts/bible_names_alignment_changes.md`.
+
+## Traditional Chinese Localization of Bible Names (`bible_names_tc.py`)
+
+Translated and localized `scripts/bible_names_tc.py` into Traditional Chinese:
+- **Key Translation:**
+  - Mapped English dictionary keys to their official Traditional Chinese names from `tsv/bible_persons.tsv` and `tsv/bible_locations.tsv`.
+  - Mapped complementary terms via `tsv/names_english_chinese.tsv` and verified standard CUV translations for theological and doctrinal terms (e.g. `阿爸`, `哈利路亞`, `敵基督`, `次經`).
+  - Disambiguated homographic English names into separate Traditional Chinese entries (e.g. Person Abel → `亞伯` vs. City Abel → `亞比拉`; Noah of the Ark → `挪亞` vs. Zelophehad's daughter Noah → `挪阿`; Egypt Rahab → `拉哈伯` vs. Jericho Rahab → `喇合`).
+  - Merged multiple English etymologies sharing the same Chinese name (e.g. `巴拉` across *Baalah*, *Baalath*, and *Barak*) with semicolons (`；`) so all biblical meanings are preserved without loss.
+- **Value & Etymology Translation:**
+  - Fully translated all **2,628** entry meanings into Traditional Chinese matching CUV theological terminology, drawing from `exlbp_TC` in `exlb3.data`, `scripts/name_meanings_tc.py`, and biblical lexicon references.
+  - Sanitized quotes, parenthetical references, and redundant aliases.
+  - Formatted strictly as `"<b>{ChineseKey}</b> - {ChineseMeaning}"`.
+- **Result:** **2,397** unique Traditional Chinese entries with **0** Latin characters and **0** remaining English words.
+
+## Simplified Chinese Conversion of Bible Names (`bible_names_sc.py`)
+
+Generated `scripts/bible_names_sc.py` by converting `scripts/bible_names_tc.py` to Simplified Chinese using `opencc` (`t2s.json`):
+- Both dictionary keys and etymological values were converted cleanly into Simplified Chinese.
+- Set the dictionary variable to `bible_names_sc`.
+- Maintained exact 1:1 parity with `bible_names_tc.py` (**2,397** unique entries, **0** duplicate keys, **0** Latin characters).
+- Enforces consistency with Simplified Chinese names in `tsv/bible_persons.tsv` and `tsv/bible_locations.tsv`.
+
+
+
+
