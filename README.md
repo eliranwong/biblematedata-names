@@ -85,6 +85,9 @@ This project is to map biblical names in [biblematedata](https://github.com/elir
 3. **Simplified Chinese Mapping (`exlbp_sc`):**
    - Replaced all character names inside `<ref onclick="exlbp('BP{PersonID}')">{Name}</ref>` with their exact Simplified Chinese `Name` from `PEOPLERELATIONSHIP_SC` mapped by `PersonID` (with CUV Simplified indexing titles for 7000–7500).
    - **0** unmapped `PersonID`s and **0** remaining English name occurrences.
+4. **English Canonical Entry Name Alignment (`exlbp`):**
+   - Standardized all **53,693** person references across all **21,022** rows in the English `exlbp` table so each PersonID consistently displays its exact dictionary heading name from `exlb3.data` (e.g. `BP7000` → `God/Lord/Father`, `BP7100` → `Reference To God`, `BP7200` → `Jesus/Christ/Emmanuel/Son`, `BP7300` → `Reference To Jesus Christ`, `BP7400` → `Reference To the Holy Spirit`, `BP7500` → `Reference To A Bodily Appearence of God`).
+   - Replaced surface-form pronouns, fragments, and unclosed italic tags (e.g. `<i>he`, `him`) with exact canonical names across **41,753** references (**18,507** modified rows), achieving **100%** consistency (**0** mismatches).
 
 ## Chinese Translation and Localization of Location Verse Index in `indexes2.sqlite`
 
@@ -100,6 +103,9 @@ The location index table `exlbl` was duplicated and localized into `exlbl_tc` an
    - Converted all Traditional Chinese names to Simplified Chinese using the project's comprehensive 725-character biblical Chinese orthographic mapping.
    - Fixed historical closing tag typos (`</exlbp></ref>`) to well-formed `<ref onclick="exlbl('BL...')">...</ref>`.
    - **Final state:** All **4,430** rows and **6,941** references in `exlbl_tc` and `exlbl_sc` mapped to Chinese with **0** remaining English letters or unmapped references.
+4. **English Canonical Entry Name Alignment (`exlbl`):**
+   - Standardized all **6,941** location references across all **4,430** rows in the English `exlbl` table so each LocationID consistently displays its exact dictionary heading name from `exlb3.data` (e.g. `BL312` → `Ethiopia/Cush`, `BL421` → `Euphrates River`, `BL902` → `Nod`, `BL1093` → `Sidon/Zidon`, `BL202` → `Beth-El`, `BL362` → `Egypt/Egyptians/Egyptian`).
+   - Replaced generic surface nouns (e.g. `city`, `river`), inflected forms, and historical tag typos (`</exlbp></ref>`) with exact canonical names across **2,934** references (**2,314** modified rows), achieving **100%** consistency (**0** mismatches).
 
 ## Chinese Location Coordinates & Dictionary Localization (`bible_locations_*.py`, `tsv/bible_locations.tsv`, and `exlb3.data` `exlbl_tc` / `exlbl_sc`)
 
@@ -158,6 +164,30 @@ Generated `scripts/bible_names_sc.py` by converting `scripts/bible_names_tc.py` 
 - Set the dictionary variable to `bible_names_sc`.
 - Maintained exact 1:1 parity with `bible_names_tc.py` (**2,397** unique entries, **0** duplicate keys, **0** Latin characters).
 - Enforces consistency with Simplified Chinese names in `tsv/bible_persons.tsv` and `tsv/bible_locations.tsv`.
+
+## Comprehensive Audit & Correction of Chinese Person and Location Names
+
+Performed a full cross-check of all **3,086** biblical person entries and **1,147** biblical location entries against `CUV.bible`, `KJV.bible`, `biblePeople.data` (`PEOPLE`), `exlb3.data`, `indexes2.sqlite`, and `tsv/names_english_chinese.tsv`, fixing shifted word-alignment errors, common-word noise, Simplified-character leaks, and `BP*`-to-`PersonID` index offsets across all TSVs, SQLite databases, and Python scripts:
+
+1. **Biblical Persons (`tsv/bible_persons.tsv`):**
+   - Corrected **101** Traditional Chinese entries and regenerated all **Simplified Chinese** entries from Traditional Chinese via `opencc` (`t2s.json`, **97** updated):
+     - **Pipe-separated (`|`) entries (42 corrected, 30 verified & kept):** Removed spurious common nouns, titles, verbs, numbers, place names, relatives' names, and duplicate Simplified Chinese variants (e.g. `20 Abiathar` `亞比亞他|祭司` → `亞比亞他`, `23 Abiel` `孫子|亞別` → `亞別`, `26 Abigail` `亞比該|妻子` → `亞比該`, `59 Absalom` `生|押沙龍|押沙龙` → `押沙龍`, `682 Jacob / Israel` `雅各|以色列|耶和華` → `雅各|以色列`, `903 Jesse` `耶西|兒子` → `耶西`, `994 David` `大衛|兒子|罵陣|父親|王|大卫` → `大衛`, `1324 God` `上帝|耶和華|萬軍|推羅|耶和华` → `上帝|耶和華`, `1727 Joshua` `約書亞|引誘|嫩` → `約書亞`, `2745 Simon / Peter` `西門|彼得|西门 彼得|西門 彼得` → `西門|彼得`, `2762 Solomon` `所羅門|殿|二百五十|兒子|所罗门` → `所羅門`), while preserving verified multi-name/multi-transliteration entries (e.g. `58 Abram / Abraham` `亞伯蘭|亞伯拉罕`, `102 Adoram` `亞多蘭|哈多蘭`, `121 Ahaziah` `亞哈謝|約哈斯`, `791 Jehoiachin` `約雅斤|耶哥尼雅|哥尼雅`, `2479 Saul / Paul` `掃羅|保羅`).
+     - **Shifted single-name mismatches (23 corrected):** Fixed entries such as `31 Abihail` (`大衛` → `亞比孩`), `417 Bavai` (`賓內` → `巴瓦伊`), `425 Bechorath` (`玄孫` → `比歌拉`), `464 Ben-zoheth` (`梭黑` → `便‧梭黑`), `515 Bishlam` (`上書` → `比施蘭`), `569 Azur` (`先知` → `押朔`), `624 Ishi` (`梭黑` → `以示`), `711 Jairus` (`葉魯` → `睚魯`), `1539 Hodaiah` (`第萊雅` → `何大雅`), `1596 Iddo` (`弟兄` → `易多`), `1740 Jozabad` (`族長` → `約撒拔`), `1760 Judas Iscariot` (`加略` → `加略人猶大`), `1929 Manasseh` (`兒子` → `瑪拿西`), `1943 Mary Magdalene` (`抹大拉` → `抹大拉的馬利亞`), `2098 Mithredath` (`比施蘭` → `米特利達`), `2194 Nethaneel` (`兄弟` → `拿坦業`), `2310 Pelet` (`兒子` → `毗力`), `2483 Segub` (`安` → `西割`), `2574 Shebaniah` (`約瑟` → `示巴尼`), `2607 Shelomith` (`兒子` → `示羅密`), `2689 Shimei` (`兒子` → `示每`), `2721 Shobek` (`毗利哈` → `朔百`), `2809 Tabeel` (`米特利達` → `他別`), `2870 Tobadonijah` (`亞多尼雅` → `駝‧巴多尼雅`), and `3052 Zeror` (`曾孫` → `洗羅`).
+     - **CUV spelling, spacing, and Simplified-character fixes (36 corrected):** Standardized entries such as `963 Cush` (`古实` → `古實`), `579 Baal-zebub` (`巴力 西卜` → `巴力‧西卜`), `1766 Justus` (`提多 犹士都` → `提多‧猶士都`), `968 Cyrus` (`居魯士` → `塞魯士`), `90 Adlai` (`亞第萊` → `亞第賚`), `340 Ashriel` (`亞斯烈` → `亞斯列`), `1055 Elasah` (`以利亞薩` → `以利亞撒`), `1104–1106, 1110 Eliel` (`以利業` → `以列`), `1773–1775 Kemuel` (`基摩利` → `基母利`), `2147 Naomi` (`拿娥米` → `拿俄米`), and verse-specific CUV variants (`耶利末`/`耶利摩`, `撒迦利雅`/`撒迦利亞`, etc.).
+
+2. **Biblical Locations (`tsv/bible_locations.tsv`):**
+   - Corrected **10** Traditional Chinese entries (`BL106` `亞斯她錄` → `亞斯他錄`, `BL114` `亞大錄` → `亞他綠`, `BL224` `伯米羅` → `米羅`, `BL279` `地方` → `迦西斐雅`, `BL730` `古伯` → `利比亞`, `BL925` `巴特羅` → `巴忒羅`, `BL1119` `敘加` → `觜加`, `BL1121` `敘拉古` → `觜拉古`, `BL1165` `亭拿` → `亭納`, `BL1248` `謝撒` → `泄撒`) and regenerated Simplified Chinese via `opencc` (`t2s.json`, **16** SC entries updated).
+
+3. **SQLite Databases (`biblePeople.data`, `exlb3.data`, `indexes2.sqlite`):**
+   - **`biblePeople.data`:** Updated `Name` across `PEOPLE_TC`, `PEOPLE_SC`, `PEOPLERELATIONSHIP_TC`, and `PEOPLERELATIONSHIP_SC` for all 3,086 `PersonID`s.
+   - **`exlb3.data`:** Resolved the `BP*`-to-`PersonID` offset across all **3,088** `exlbp` entries (where `exlbp` and `biblePeople.data` diverged for 1,337 IDs, e.g., `BP2107` *Moses* vs. `PersonID 2107` *Mordecai*) by matching `(English name, First Occurrence)` against `PEOPLE`. Updated `<h2 exlbp="...">` headings and `<ref onclick="exlbp('BP...')">` links in `exlbp_TC` (**2,430** rows) and `exlbp_SC` (**2,429** rows), plus location headings and `exlbli_*` labels in `exlbl_tc`, `exlbl_sc`, `exlbli_tc`, and `exlbli_sc` (**10** rows each).
+   - **`indexes2.sqlite`:** Updated `<ref onclick="exlbp('BP...')">` links in `exlbp_tc` (**19,233** rows) and `exlbp_sc` (**19,223** rows) using the aligned `BP*` mapping, and updated `<ref onclick="exlbl('BL...')">` links in `exlbl_tc` and `exlbl_sc` (**21** rows each). All three databases passed `PRAGMA integrity_check`.
+
+4. **Python Scripts & Alignment TSV (`scripts/` and `tsv/names_english_chinese_less.tsv`):**
+   - **`scripts/names_english_chinese.py`** (**84** lines updated) and **`tsv/names_english_chinese_less.tsv`** (**90** rows updated): Fixed shifted-alignment common words (`兒子`, `妻子`, `生`, `女兒`, `王`, `上書`, `玄孫`, `曾孫`, `族長`, `地方`, etc.), mismatched names, Simplified characters, and spaces in both `cu2010t` and `cu2010s`.
+   - **`scripts/bible_names_tc.py`** & **`scripts/bible_names_sc.py`:** Fixed **16** erroneous/spaced/Simplified-character keys and headings in `bible_names_tc.py` (**2,396** entries after deduplication) and regenerated `bible_names_sc.py` via `scripts/build_bible_names_sc.py`.
+   - **`scripts/bible_locations_tc.py`** & **`scripts/bible_locations_sc.py`:** Updated **9** location entries in each file.
+
 
 
 

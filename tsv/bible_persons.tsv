@@ -18,18 +18,18 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 17	Abiah	亞比雅	亚比雅
 18	Abiel	亞比	亚比
 19	Abiasaph	亞比亞撒	亚比亚撒
-20	Abiathar	亞比亞他|祭司	亚比亚他|祭司
+20	Abiathar	亞比亞他	亚比亚他
 21	Abida	亞比大	亚比大
 22	Abidan	亞比但	亚比但
-23	Abiel	孫子|亞別	孙子|亚别
+23	Abiel	亞別	亚别
 24	Abiezer	亞比以謝	亚比以谢
 25	Abiezer	亞比以謝	亚比以谢
-26	Abigail	亞比該|妻子	亚比该|妻子
+26	Abigail	亞比該	亚比该
 27	Abigail	亞比該	亚比该
 28	Abihail	亞比亥	亚比亥
 29	Abihail	亞比孩	亚比孩
 30	Abihail	亞比孩	亚比孩
-31	Abihail	大衛	大卫
+31	Abihail	亞比孩	亚比孩
 32	Abihail	亞比孩	亚比孩
 33	Abihu	亞比戶	亚比户
 34	Abihud	亞比忽	亚比忽
@@ -57,9 +57,9 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 56	Abiud	亞比玉	亚比玉
 57	Abner	押尼珥	押尼珥
 58	Abram / Abraham	亞伯蘭|亞伯拉罕	亚伯兰|亚伯拉罕
-59	Absalom	生|押沙龍|押沙龙	生|押沙龙
+59	Absalom	押沙龍	押沙龙
 60	Achaicus	亞該古	亚该古
-61	Achan	亞干|亞迦	亚干|亚迦
+61	Achan	亞干	亚干
 62	Achbor	亞革波	亚革波
 63	Achbor	亞革波	亚革波
 64	Achbor	亞革波	亚革波
@@ -88,7 +88,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 87	Adin	亞丁	亚丁
 88	Adina	亞第拿	亚第拿
 89	Adino	亞底挪	亚底挪
-90	Adlai	亞第萊	亚第莱
+90	Adlai	亞第賚	亚第赉
 91	Admatha	押瑪他	押玛他
 92	Adna	阿底拿	阿底拿
 93	Adna	押拿	押拿
@@ -124,7 +124,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 123	Aher	亞黑	亚黑
 124	Ahi	亞希	亚希
 125	Ahi	亞希	亚希
-126	Ahiah	亞希突|亞希亞	亚希突|亚希亚
+126	Ahiah	亞希亞	亚希亚
 127	Ahiah	亞希亞	亚希亚
 128	Ahiah	亞希亞	亚希亚
 129	Ahiam	亞希暗	亚希暗
@@ -250,7 +250,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 249	Anah	亞拿	亚拿
 250	Anaiah	亞奈雅	亚奈雅
 251	Anaiah	亞奈雅	亚奈雅
-252	Anak	亞衲 族|亞衲	亚衲 族|亚衲
+252	Anak	亞衲	亚衲
 253	Anamim	亞拿米	亚拿米
 254	Anammelech	亞拿米勒	亚拿米勒
 255	Anan	亞難	亚难
@@ -328,7 +328,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 327	Asaiah	亞帥雅	亚帅雅
 328	Asaiah	亞帥雅	亚帅雅
 329	Asaph	亞薩	亚萨
-330	Asaph	亞薩|撒迦利雅|亚萨	亚萨|撒迦利雅
+330	Asaph	亞薩	亚萨
 331	Asaph	亞薩	亚萨
 332	Asaph	亞薩	亚萨
 333	Asareel	亞撒列	亚撒列
@@ -338,7 +338,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 337	Asher	亞設	亚设
 338	Ashkenaz	亞實基拿	亚实基拿
 339	Ashpenaz	亞施毗拿	亚施毗拿
-340	Ashriel	亞斯烈	亚斯烈
+340	Ashriel	亞斯列	亚斯列
 341	Ashtoreth	亞斯她錄	亚斯她录
 342	Ashur	亞施戶	亚施户
 343	Ashvath	亞施法	亚施法
@@ -415,7 +415,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 414	Bashemath	巴實抹	巴实抹
 415	Basmath	巴實抹	巴实抹
 416	Bathsheba	拔示巴	拔示巴
-417	Bavai	賓內	宾内
+417	Bavai	巴瓦伊	巴瓦伊
 418	Bazluth	巴洗律	巴洗律
 419	Bealiah	比亞利雅	比亚利雅
 420	Bebai	比拜	比拜
@@ -423,7 +423,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 422	Bebai	比拜	比拜
 423	Becher	比結	比结
 424	Becher	比結	比结
-425	Bechorath	玄孫	玄孙
+425	Bechorath	比歌拉	比歌拉
 426	Bedad	比達	比达
 427	Bedan	比但	比但
 428	Bedan	比但	比但
@@ -461,8 +461,8 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 460	Benjamin	便雅憫	便雅悯
 461	Benjamin	便雅憫	便雅悯
 462	Beno	比挪	比挪
-463	Benjamin	便雅憫|十八萬	便雅悯|十八万
-464	Ben-zoheth	梭黑	梭黑
+463	Benjamin	便雅憫	便雅悯
+464	Ben-zoheth	便‧梭黑	便‧梭黑
 465	Beor	比珥	比珥
 466	Beor	比珥	比珥
 467	Bera	比拉	比拉
@@ -513,7 +513,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 512	Binnui	賓內	宾内
 513	Birsha	比沙	比沙
 514	Birzavith	比撒威	比撒威
-515	Bishlam	上書	上书
+515	Bishlam	比施蘭	比施兰
 516	Bithiah	比提雅	比提雅
 517	Biztha	比斯他	比斯他
 518	Blastus	伯拉斯都	伯拉斯都
@@ -567,7 +567,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 566	Azrikam	押斯利甘	押斯利甘
 567	Azubah	阿蘇巴	阿苏巴
 568	Azubah	阿蘇巴	阿苏巴
-569	Azur	先知	先知
+569	Azur	押朔	押朔
 570	Azur	押朔	押朔
 571	Azzan	阿散	阿散
 572	Azzur	押朔	押朔
@@ -577,7 +577,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 576	Baal-hanan	巴勒‧哈南	巴勒‧哈南
 577	Baal-hanan	巴勒‧哈南	巴勒‧哈南
 578	Baalis	巴利斯	巴利斯
-579	Baal-zebub	巴力 西卜	巴力 西卜
+579	Baal-zebub	巴力‧西卜	巴力‧西卜
 580	Baana	巴拿	巴拿
 581	Baana	巴拿	巴拿
 582	Baanah	巴拿	巴拿
@@ -622,7 +622,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 621	Ishbi-benob	以實‧比諾	以实‧比诺
 622	Ish-bosheth	伊施波設	伊施波设
 623	Ishi	以示	以示
-624	Ishi	梭黑	梭黑
+624	Ishi	以示	以示
 625	Ishi	以示	以示
 626	Ishi	以示	以示
 627	Ishiah	伊示雅	伊示雅
@@ -670,7 +670,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 669	Jaazaniah	雅撒尼亞	雅撒尼亚
 670	Jaazaniah	雅撒尼亞	雅撒尼亚
 671	Jaaziah	雅西雅	雅西雅
-672	Jaaziel	亞薛	亚薛
+672	Jaaziel	雅薛	雅薛
 673	Jabal	雅八	雅八
 674	Jabesh	雅比	雅比
 675	Jabez	雅比斯	雅比斯
@@ -680,7 +680,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 679	Jachin	雅斤	雅斤
 680	Jachin	雅斤	雅斤
 681	Jachin	雅斤	雅斤
-682	Jacob / Israel	雅各|以色列|耶和華	雅各|以色列|耶和华
+682	Jacob / Israel	雅各|以色列	雅各|以色列
 683	Jacob	雅各	雅各
 684	Jada	雅大	雅大
 685	Jadau	雅玳	雅玳
@@ -709,7 +709,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 708	Jair	睚珥	睚珥
 709	Jair	睚珥	睚珥
 710	Jair	睚珥	睚珥
-711	Jairus	葉魯	叶鲁
+711	Jairus	睚魯	睚鲁
 712	Jakeh	雅基	雅基
 713	Jakim	雅金	雅金
 714	Jakim	雅金	雅金
@@ -855,23 +855,23 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 854	Jeremiah	耶利米	耶利米
 855	Jeremiah	雅利米雅	雅利米雅
 856	Jeremoth	耶利末	耶利末
-857	Jeremoth	耶利末	耶利末
-858	Jeremoth	耶列末	耶列末
-859	Jeremoth	耶列末	耶列末
+857	Jeremoth	耶利摩	耶利摩
+858	Jeremoth	耶利末	耶利末
+859	Jeremoth	耶利末	耶利末
 860	Jeriah	耶利雅	耶利雅
 861	Jeribai	耶利拜	耶利拜
 862	Jeriel	耶勒	耶勒
 863	Jerijah	耶利雅	耶利雅
-864	Jerimoth	耶利末	耶利末
+864	Jerimoth	耶利摩	耶利摩
 865	Jerimoth	耶利摩	耶利摩
 866	Jerimoth	耶利摩	耶利摩
-867	Jerimoth	耶利末	耶利末
+867	Jerimoth	耶利摩	耶利摩
 868	Jerimoth	耶利摩	耶利摩
 869	Jerimoth	耶利摩	耶利摩
-870	Jerimoth	耶利摩	耶利摩
+870	Jerimoth	耶利末	耶利末
 871	Jerioth	耶略	耶略
 872	Jeroboam	耶羅波安	耶罗波安
-873	Jeroboam	耶羅波安|耶罗波安	耶罗波安
+873	Jeroboam	耶羅波安	耶罗波安
 874	Jeroham	耶羅罕	耶罗罕
 875	Jeroham	耶羅罕	耶罗罕
 876	Jeroham	耶羅罕	耶罗罕
@@ -901,7 +901,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 900	Jesiah	耶西亞	耶西亚
 901	Jesiah	耶西雅	耶西雅
 902	Jesimiel	耶西篾	耶西篾
-903	Jesse	耶西|兒子	耶西|儿子
+903	Jesse	耶西	耶西
 904	Jesus	耶數	耶数
 905	Jesus Christ	耶穌基督	耶稣基督
 906	Jether	益帖	益帖
@@ -939,7 +939,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 938	Chesed	基薛	基薛
 939	Chileab	基利押	基利押
 940	Chilion	基連	基连
-941	Chimham	金罕|基羅特金罕	金罕|基罗特金罕
+941	Chimham	金罕	金罕
 942	Chislon	基斯倫	基斯伦
 943	Chloe	革來氏	革来氏
 944	Chushan-rishathaim	古珊‧利薩田	古珊‧利萨田
@@ -961,12 +961,12 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 960	Crescens	革勒士	革勒士
 961	Crispus	基利司布	基利司布
 962	Cush	古實	古实
-963	Cush	古实	古实
+963	Cush	古實	古实
 964	Cushi	古示	古示
 965	Cushi	古示	古示
 966	Cushi	古示	古示
 967	Cyrenius	居里扭	居里扭
-968	Cyrus	居魯士	居鲁士
+968	Cyrus	塞魯士	塞鲁士
 969	Dagon	大袞	大衮
 970	Dalaiah	第萊雅	第莱雅
 971	Dalphon	達分	达分
@@ -992,7 +992,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 991	Daughter of Sanballat	參巴拉的女兒	参巴拉的女儿
 992	Daughter of Shechaniah	示迦尼雅的女兒	示迦尼雅的女儿
 993	Daughter of Shuah	書亞的女兒	书亚的女儿
-994	David	大衛|兒子|罵陣|父親|王|大卫	大卫|儿子|骂阵|父亲|王
+994	David	大衛	大卫
 995	Debir	底璧	底璧
 996	Deborah	底波拉	底波拉
 997	Deborah	底波拉	底波拉
@@ -1021,7 +1021,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1020	Dodo	朵多	朵多
 1021	Dodo	朵多	朵多
 1022	Dodo	朵多	朵多
-1023	Doeg	多益|轉身	多益|转身
+1023	Doeg	多益	多益
 1024	Drusilla	土西拉	土西拉
 1025	Dumah	度瑪	度玛
 1026	Ebal	以巴錄	以巴录
@@ -1038,7 +1038,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1037	Eglon	伊磯倫	伊矶伦
 1038	Ehi	以希	以希
 1039	Ehud	以笏|以忽	以笏|以忽
-1040	Ehud	以笏	以笏
+1040	Ehud	以忽	以忽
 1041	Eker	以結	以结
 1042	Eladah	以拉大	以拉大
 1043	Elah	以拉	以拉
@@ -1053,7 +1053,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1052	Elam	以攔	以拦
 1053	Elam	以攔	以拦
 1054	Elam	以攔	以拦
-1055	Elasah	以利亞薩	以利亚萨
+1055	Elasah	以利亞撒	以利亚撒
 1056	Elasah	以利亞薩	以利亚萨
 1057	Eldaah	以勒大	以勒大
 1058	Eldad	伊利達	伊利达
@@ -1062,7 +1062,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1061	Eleasah	以利亞薩	以利亚萨
 1062	Eleazar	以利亞撒	以利亚撒
 1063	Eleazar	以利亞撒	以利亚撒
-1064	Eleazar	兒子|以利亞撒	儿子|以利亚撒
+1064	Eleazar	以利亞撒	以利亚撒
 1065	Eleazar	以利亞撒	以利亚撒
 1066	Eleazar	以利亞撒	以利亚撒
 1067	Eleazar	以利亞撒	以利亚撒
@@ -1073,7 +1073,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1072	Eli	以利	以利
 1073	Eliab	以利押	以利押
 1074	Eliab	以利押	以利押
-1075	Eliab	以利押|女兒	以利押|女儿
+1075	Eliab	以利押	以利押
 1076	Eliab	以利押	以利押
 1077	Eliab	以利押	以利押
 1078	Eliada	以利雅大	以利雅大
@@ -1102,13 +1102,13 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1101	Eliashib	以利亞實	以利亚实
 1102	Eliathah	以利亞他	以利亚他
 1103	Elidad	以利達	以利达
-1104	Eliel	以利業	以利业
-1105	Eliel	以利業	以利业
-1106	Eliel	以利業	以利业
+1104	Eliel	以列	以列
+1105	Eliel	以列	以列
+1106	Eliel	以列	以列
 1107	Eliel	以利業	以利业
 1108	Eliel	以利業	以利业
 1109	Eliel	以利業	以利业
-1110	Eliel	以利業	以利业
+1110	Eliel	以列	以列
 1111	Eliel	以列	以列
 1112	Elienai	以利乃	以利乃
 1113	Eliezer	以利以謝	以利以谢
@@ -1240,7 +1240,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1239	Ezer	以謝珥	以谢珥
 1240	Ezer	以謝	以谢
 1241	Ezer	以薛	以薛
-1242	Ezer	以謝珥	以谢珥
+1242	Ezer	以謝	以谢
 1243	Ezer	以謝	以谢
 1244	Ezra	以斯拉	以斯拉
 1245	Ezra	以斯拉	以斯拉
@@ -1271,7 +1271,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1270	Gaius	該猶	该犹
 1271	Gaius	該猶	该犹
 1272	Gaius	該猶	该犹
-1273	Galal	加拉	加拉
+1273	Galal	迦拉	迦拉
 1274	Galal	加拉	加拉
 1275	Gallio	迦流	迦流
 1276	Gamaliel	迦瑪列	迦玛列
@@ -1319,10 +1319,10 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1318	Gilead	基列	基列
 1319	Gilead	基列	基列
 1320	Ginath	基納	基纳
-1321	Ginnethon	近頓|米書蘭	近顿|米书兰
+1321	Ginnethon	近頓	近顿
 1322	Girgasite	革迦撒人	革迦撒人
 1323	Gispa	基斯帕	基斯帕
-1324	God	上帝|耶和華|萬軍|推羅|耶和华	上帝|耶和华|万军|推罗
+1324	God	上帝|耶和華	上帝|耶和华
 1325	Gog	歌革	歌革
 1326	Gog	歌革	歌革
 1327	Goliath	歌利亞	歌利亚
@@ -1340,7 +1340,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1339	Hadad	哈達	哈达
 1340	Hadadezer	哈大底謝	哈大底谢
 1341	Hadar	哈大	哈大
-1342	Hadar	哈達爾	哈达尔
+1342	Hadar	哈達	哈达
 1343	Hadassah	哈大沙	哈大沙
 1344	Hadlai	哈得萊	哈得莱
 1345	Hadoram	哈多蘭	哈多兰
@@ -1393,13 +1393,13 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1392	Hananiah	哈拿尼雅	哈拿尼雅
 1393	Hananiah	哈拿尼雅	哈拿尼雅
 1394	Hananiah	哈楠尼亞	哈楠尼亚
-1395	Hananiah	押朔|哈拿尼雅	押朔|哈拿尼雅
+1395	Hananiah	哈拿尼雅	哈拿尼雅
 1396	Hananiah	哈拿尼雅	哈拿尼雅
 1397	Hananiah	哈拿尼亞	哈拿尼亚
 1398	Hananiah	哈拿尼雅	哈拿尼雅
 1399	Haniel	漢尼業	汉尼业
 1400	Hannah	哈拿	哈拿
-1401	Hanniel	漢尼業	汉尼业
+1401	Hanniel	漢聶	汉聂
 1402	Hanoch	哈諾	哈诺
 1403	Hanoch	哈諾	哈诺
 1404	Hanun	哈嫩	哈嫩
@@ -1425,7 +1425,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1424	Harumaph	哈路抹	哈路抹
 1425	Haruz	哈魯斯	哈鲁斯
 1426	Hasadiah	哈撒底	哈撒底
-1427	Hasenuah	哈西努亞	哈西努亚
+1427	Hasenuah	哈西努	哈西努
 1428	Hashabiah	哈沙比雅	哈沙比雅
 1429	Hashabiah	哈沙比雅	哈沙比雅
 1430	Hashabiah	哈沙比雅	哈沙比雅
@@ -1510,7 +1510,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1509	Hesed	希悉	希悉
 1510	Heth	赫	赫
 1511	Hezeki	希西基	希西基
-1512	Hezekiah	希西家|王	希西家|王
+1512	Hezekiah	希西家	希西家
 1513	Hezekiah	希西家	希西家
 1514	Hezekiah	希西家	希西家
 1515	Hezion	希旬	希旬
@@ -1537,7 +1537,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1536	Hizkijah	希西家	希西家
 1537	Hobab	何巴	何巴
 1538	Hod	河得	河得
-1539	Hodaiah	第萊雅	第莱雅
+1539	Hodaiah	何大雅	何大雅
 1540	Hodaviah	何達威雅	何达威雅
 1541	Hodaviah	何達威雅	何达威雅
 1542	Hodaviah	何達威雅	何达威雅
@@ -1549,11 +1549,11 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1548	Hoglah	曷拉	曷拉
 1549	Hoham	何咸	何咸
 1550	Hophni	何弗尼	何弗尼
-1551	Horam	何蘭	何兰
+1551	Horam	荷蘭	荷兰
 1552	Hori	何利	何利
 1553	Hori	何利	何利
 1554	Hosah	何薩	何萨
-1555	Hosea	何西阿|何西阿書	何西阿|何西阿书
+1555	Hosea	何西阿	何西阿
 1556	Hoshaiah	何沙雅	何沙雅
 1557	Hoshaiah	何沙雅	何沙雅
 1558	Hoshama	何沙瑪	何沙玛
@@ -1582,7 +1582,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1582	Huz	烏斯	乌斯
 1583	Hymenaeus	許米乃	许米乃
 1584	Ibhar	益轄	益辖
-1585	Ibneiah	伊比內雅	伊比内雅
+1585	Ibneiah	伊比尼雅	伊比尼雅
 1586	Ibnijah	伊比尼雅	伊比尼雅
 1587	Ibri	伊比利	伊比利
 1588	Ibzan	以比讚	以比赞
@@ -1593,7 +1593,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1593	Iddo	易多	易多
 1594	Iddo	易多	易多
 1595	Iddo	易多	易多
-1596	Iddo	弟兄	弟兄
+1596	Iddo	易多	易多
 1597	Iddo	易多	易多
 1598	Igal	以迦	以迦
 1599	Igal	以甲	以甲
@@ -1724,7 +1724,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1724	Joshaphat	約沙法	约沙法
 1725	Joshaviah	約沙未雅	约沙未雅
 1726	Joshbekashah	約施比加沙	约施比加沙
-1727	Joshua	約書亞|引誘|嫩	约书亚|引诱|嫩
+1727	Joshua	約書亞	约书亚
 1728	Joshua	約書亞	约书亚
 1729	Joshua	約書亞	约书亚
 1730	Josiah	約西亞	约西亚
@@ -1732,12 +1732,12 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1732	Josibiah	約示比	约示比
 1733	Josiphiah	約細斐	约细斐
 1734	Jotham	約坦	约坦
-1735	Jotham	約坦|兒子	约坦|儿子
+1735	Jotham	約坦	约坦
 1736	Jotham	約坦	约坦
 1737	Jozabad	約撒拔	约撒拔
 1738	Jozabad	約撒拔	约撒拔
 1739	Jozabad	約撒拔	约撒拔
-1740	Jozabad	族長	族长
+1740	Jozabad	約撒拔	约撒拔
 1741	Jozabad	約撒拔	约撒拔
 1742	Jozabad	約撒拔	约撒拔
 1743	Jozabad	約撒拔	约撒拔
@@ -1757,22 +1757,22 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1757	Judas	猶大	犹大
 1758	Judas	猶大	犹大
 1759	Judas	猶大	犹大
-1760	Judas Iscariot	加略	加略
+1760	Judas Iscariot	加略人猶大	加略人犹大
 1761	Judith	猶滴	犹滴
 1762	Julia	猶利亞	犹利亚
 1763	Julius	猶流	犹流
 1764	Junia	猶尼亞	犹尼亚
 1765	Jushab-hesed	于沙‧希悉	于沙‧希悉
-1766	Justus	提多 犹士都	提多 犹士都
+1766	Justus	提多‧猶士都	提多‧犹士都
 1767	Kadmiel	甲篾	甲篾
 1768	Kallai	加萊	加莱
 1769	Kedar	基達	基达
 1770	Kedemah	基底瑪	基底玛
 1771	Kelaiah	基拉雅	基拉雅
 1772	Kelita	基利他	基利他
-1773	Kemuel	基摩利	基摩利
-1774	Kemuel	基摩利	基摩利
-1775	Kemuel	基摩利	基摩利
+1773	Kemuel	基母利	基母利
+1774	Kemuel	基母利	基母利
+1775	Kemuel	基母利	基母利
 1776	Kenaz	基納斯	基纳斯
 1777	Kenaz	基納斯	基纳斯
 1778	Kenaz	基納斯	基纳斯
@@ -1781,7 +1781,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1781	Keros	基綠	基绿
 1782	Keturah	基土拉	基土拉
 1783	Kezia	基洗亞	基洗亚
-1784	Kish	兒子|基士	儿子|基士
+1784	Kish	基士	基士
 1785	Kish	基士	基士
 1786	Kish	基士	基士
 1787	Kish	基士	基士
@@ -1836,7 +1836,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1836	Luke	路加	路加
 1837	Lydia	呂底亞	吕底亚
 1838	Lysanias	呂撒聶	吕撒聂
-1839	Maacah	女兒|瑪迦	女儿|玛迦
+1839	Maacah	瑪迦	玛迦
 1840	Maachah	瑪迦	玛迦
 1841	Maachah	瑪迦	玛迦
 1842	Maachah	瑪迦	玛迦
@@ -1926,8 +1926,8 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1926	Manaen	馬念	马念
 1927	Manahath	瑪拿轄	玛拿辖
 1928	Manasseh	瑪拿西	玛拿西
-1929	Manasseh	兒子	儿子
-1930	Manasseh	瑪拿西|兒子	玛拿西|儿子
+1929	Manasseh	瑪拿西	玛拿西
+1930	Manasseh	瑪拿西	玛拿西
 1931	Manasseh	瑪拿西	玛拿西
 1932	Manasseh	瑪拿西	玛拿西
 1933	Manoah	瑪挪亞	玛挪亚
@@ -1935,12 +1935,12 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1935	Maon	瑪雲	玛云
 1936	Marsena	瑪西拿	玛西拿
 1937	Martha	馬大	马大
-1938	Mary	馬利亞|马利亚	马利亚
+1938	Mary	馬利亞	马利亚
 1939	Mary	馬利亞	马利亚
 1940	Mary	馬利亞	马利亚
 1941	Mary	馬利亞	马利亚
 1942	Mary	馬利亞	马利亚
-1943	Mary Magdalene	抹大拉	抹大拉
+1943	Mary Magdalene	抹大拉的馬利亞	抹大拉的马利亚
 1944	Mash	瑪施	玛施
 1945	Massa	瑪撒	玛撒
 1946	Matred	瑪特列	玛特列
@@ -1992,7 +1992,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 1992	Melea	米利亞	米利亚
 1993	Melech	米勒	米勒
 1994	Melzar	委辦	委办
-1995	Memucan	米慕干	米慕干
+1995	Memucan	米母干	米母干
 1996	Menahem	米拿現	米拿现
 1997	Menan	買南	买南
 1998	Meonothai	憫挪太	悯挪太
@@ -2095,17 +2095,17 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2095	Mishma	米施瑪	米施玛
 2096	Mishmannah	彌施瑪拿	弥施玛拿
 2097	Mithredath	米提利達	米提利达
-2098	Mithredath	比施蘭	比施兰
+2098	Mithredath	米特利達	米特利达
 2099	Mispereth	米斯毗列	米斯毗列
 2100	Mizraim	麥西	麦西
 2101	Mizzah	米撒	米撒
 2102	Mnason	拿孫	拿孙
-2103	Moab	摩押|上來	摩押|上来
+2103	Moab	摩押	摩押
 2104	Molech	摩洛	摩洛
 2105	Molid	摩利	摩利
 2106	Mordecai	末底改	末底改
-2107	Mordecai	末底改|來到	末底改|来到
-2108	Moses	摩西|聲音	摩西|声音
+2107	Mordecai	末底改	末底改
+2108	Moses	摩西	摩西
 2109	Mother of Aholah and Aholibah	阿荷拉和阿荷利巴的母親	阿荷拉和阿荷利巴的母亲
 2110	Mother of Lemuel	利慕伊勒的母親	利慕伊勒的母亲
 2111	Mother of the Wife of Simon	西門妻子的母親	西门妻子的母亲
@@ -2144,7 +2144,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2144	Nahshon	拿順	拿顺
 2145	Nahum	那鴻	那鸿
 2146	Nahath	拿哈	拿哈
-2147	Naomi	拿娥米	拿娥米
+2147	Naomi	拿俄米	拿俄米
 2148	Naphish	拿非施	拿非施
 2149	Naphtali	拿弗他利	拿弗他利
 2150	Naphtuhim	拿弗土希	拿弗土希
@@ -2189,7 +2189,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2191	Nethaneel	拿坦業	拿坦业
 2192	Nethaneel	拿坦業	拿坦业
 2193	Nethaneel	拿坦業	拿坦业
-2194	Nethaneel	兄弟	兄弟
+2194	Nethaneel	拿坦業	拿坦业
 2195	Nethaneel	拿坦業	拿坦业
 2196	Nethaneel	拿坦業	拿坦业
 2197	Nethaneel	拿坦業	拿坦业
@@ -2305,7 +2305,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2307	Pelatiah	毗拉提	毗拉提
 2308	Peleg	法勒	法勒
 2309	Pelet	毗力	毗力
-2310	Pelet	兒子	儿子
+2310	Pelet	毗力	毗力
 2311	Peleth	比勒	比勒
 2312	Peleth	比勒	比勒
 2313	Peninnah	毗尼拿	毗尼拿
@@ -2407,7 +2407,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2409	Rehabiah	利哈比雅	利哈比雅
 2410	Rehob	利合	利合
 2411	Rehob	利合	利合
-2412	Rehoboam	羅波安|耶路撒冷	罗波安|耶路撒冷
+2412	Rehoboam	羅波安	罗波安
 2413	Rehum	利宏	利宏
 2414	Rehum	利宏	利宏
 2415	Rehum	利宏	利宏
@@ -2426,7 +2426,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2428	Reu	拉吳	拉吴
 2429	Reuben	呂便	吕便
 2430	Reuel	流珥	流珥
-2431	Reuel	流珥|丟珥	流珥|丢珥
+2431	Reuel	流珥	流珥
 2432	Reuel	流珥	流珥
 2433	Reumah	流瑪	流玛
 2434	Rezia	利寫	利写
@@ -2458,7 +2458,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2460	Sallu	撒路	撒路
 2461	Sallu	撒路	撒路
 2462	Salma	薩瑪	萨玛
-2463	Salmon	撒門|沙拉	撒门|沙拉
+2463	Salmon	撒門	撒门
 2464	Salome	撒羅米	撒罗米
 2465	Salu	撒路	撒路
 2466	Samgar-nebo	三甲‧尼波	三甲‧尼波
@@ -2473,12 +2473,12 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2475	Sarsechim	撒西金	撒西金
 2476	Satan	撒但	撒但
 2477	Saul	掃羅	扫罗
-2478	Saul	掃羅|兒子|扫罗	扫罗|儿子
+2478	Saul	掃羅	扫罗
 2479	Saul / Paul	掃羅|保羅	扫罗|保罗
 2480	Sceva	士基瓦	士基瓦
 2481	Seba	西巴	西巴
 2482	Secundus	西公都	西公都
-2483	Segub	安	安
+2483	Segub	西割	西割
 2484	Segub	西割	西割
 2485	Seir	西珥	西珥
 2486	Seled	西列	西列
@@ -2569,7 +2569,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2571	Sheba	示巴	示巴
 2572	Shebaniah	示巴尼	示巴尼
 2573	Shebaniah	示巴尼	示巴尼
-2574	Shebaniah	約瑟	约瑟
+2574	Shebaniah	示巴尼	示巴尼
 2575	Shebaniah	示巴尼	示巴尼
 2576	Sheber	示別	示别
 2577	Shebna	舍伯那	舍伯那
@@ -2602,9 +2602,9 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2604	Shelomi	示羅米	示罗米
 2605	Shelomith	示羅密	示罗密
 2606	Shelomith	示羅密	示罗密
-2607	Shelomith	兒子	儿子
+2607	Shelomith	示羅密	示罗密
 2608	Shelomith	示羅密	示罗密
-2609	Shelomith	兒子|示羅密	儿子|示罗密
+2609	Shelomith	示羅密	示罗密
 2610	Shelomith	示羅密	示罗密
 2611	Shelomith	示羅密	示罗密
 2612	Shelumiel	示路蔑	示路蔑
@@ -2684,7 +2684,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2686	Shimei	示每	示每
 2687	Shimei	示每	示每
 2688	Shimei	示每	示每
-2689	Shimei	兒子	儿子
+2689	Shimei	示每	示每
 2690	Shimei	示每	示每
 2691	Shimei	示每	示每
 2692	Shimei	示每	示每
@@ -2708,7 +2708,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2710	Shiphrah	施弗拉	施弗拉
 2711	Shiphtan	拾弗但	拾弗但
 2712	Shishak	示撒	示撒
-2713	Shitrai	施提萊	施提莱
+2713	Shitrai	施提賚	施提赉
 2714	Shiza	示撒	示撒
 2715	Shobab	朔罷	朔罢
 2716	Shobab	朔罷	朔罢
@@ -2716,7 +2716,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2718	Shobai	朔拜	朔拜
 2719	Shobal	朔巴	朔巴
 2720	Shobal	朔巴	朔巴
-2721	Shobek	毗利哈	毗利哈
+2721	Shobek	朔百	朔百
 2722	Shobi	朔比	朔比
 2723	Shoham	朔含	朔含
 2724	Shomer	朔默	朔默
@@ -2740,7 +2740,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2742	Simeon	西面	西面
 2743	Simeon	西緬	西缅
 2744	Simeon	西面	西面
-2745	Simon / Peter	西門|彼得|西门 彼得|西門 彼得	西门|彼得|西门 彼得
+2745	Simon / Peter	西門|彼得	西门|彼得
 2746	Simon	西門	西门
 2747	Simon	西門	西门
 2748	Simon	西門	西门
@@ -2757,7 +2757,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2759	Sister of Tahpenes	答比匿的妹子	答比匿的妹子
 2760	So	梭	梭
 2761	Sodi	梭底	梭底
-2762	Solomon	所羅門|殿|二百五十|兒子|所罗门	所罗门|殿|二百五十|儿子
+2762	Solomon	所羅門	所罗门
 2763	son of Abinadab	便‧亞比拿達	便‧亚比拿达
 2764	son of Dekar	便‧底甲	便‧底甲
 2765	son of Geber	便‧基別	便‧基别
@@ -2778,9 +2778,9 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2806	Syntyche	循都基	循都基
 2807	Tabbaoth	答巴俄	答巴俄
 2808	Tabeal	他比勒	他比勒
-2809	Tabeel	米特利達	米特利达
+2809	Tabeel	他別	他别
 2810	Tabitha	大比大	大比大
-2811	Tabrimon	他伯利門	他伯利门
+2811	Tabrimon	他伯利們	他伯利们
 2812	Tahan	他罕	他罕
 2813	Tahan	他罕	他罕
 2814	Tahath	他哈	他哈
@@ -2788,7 +2788,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2816	Tahath	他哈	他哈
 2817	Tahpenes	答比匿	答比匿
 2818	Talmai	撻買	挞买
-2819	Talmai	王|達買	王|达买
+2819	Talmai	達買	达买
 2820	Talmon	達們	达们
 2821	Tamar	她瑪	她玛
 2822	Tamar	她瑪	她玛
@@ -2818,7 +2818,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2846	Thamah	答瑪	答玛
 2847	Tharshish	他施	他施
 2848	the giant in Gath	迦特的巨人	迦特的巨人
-2849	Theophilus	提阿非罗|提阿非羅	提阿非罗
+2849	Theophilus	提阿非羅	提阿非罗
 2850	Theudas	杜達	杜达
 2851	Thomas	多馬	多马
 2852	Tiberius	提庇留	提庇留
@@ -2839,7 +2839,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2867	Tiria	提利	提利
 2868	Tirzah	得撒	得撒
 2869	Titus	提多	提多
-2870	Tobadonijah	亞多尼雅	亚多尼雅
+2870	Tobadonijah	駝‧巴多尼雅	驼‧巴多尼雅
 2871	Tobiah	多比雅	多比雅
 2872	Tobiah	多比雅	多比雅
 2873	Tobijah	多比雅	多比雅
@@ -2867,7 +2867,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 2895	Uri	烏利	乌利
 2896	Uri	烏利	乌利
 2897	Uri	烏利	乌利
-2898	Uriah	烏利亞|赫	乌利亚|赫
+2898	Uriah	烏利亞	乌利亚
 2899	Uriah	烏利亞	乌利亚
 2900	Uriel	烏列	乌列
 2901	Uriel	烏列	乌列
@@ -2982,7 +2982,7 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 3010	Zechariah	撒迦利雅	撒迦利雅
 3011	Zechariah	撒迦利亞	撒迦利亚
 3012	Zechariah	撒迦利亞	撒迦利亚
-3013	Zechariah	撒迦利亞	撒迦利亚
+3013	Zechariah	撒迦利雅	撒迦利雅
 3014	Zechariah	撒迦利亞	撒迦利亚
 3015	Zechariah	撒迦利亞	撒迦利亚
 3016	Zechariah	撒迦利亞	撒迦利亚
@@ -3021,10 +3021,10 @@ PersonID	English	Traditional Chinese	Simplified Chinese
 3049	Zeresh	細利斯	细利斯
 3050	Zereth	洗列	洗列
 3051	Zeri	西利	西利
-3052	Zeror	曾孫	曾孙
+3052	Zeror	洗羅	洗罗
 3053	Zeruah	洗魯阿	洗鲁阿
 3054	Zerubbabel	所羅巴伯	所罗巴伯
-3055	Zeruiah	洗魯雅|亞比篩	洗鲁雅|亚比筛
+3055	Zeruiah	洗魯雅	洗鲁雅
 3056	Zetham	西坦	西坦
 3057	Zethan	細坦	细坦
 3058	Zethar	西達	西达
