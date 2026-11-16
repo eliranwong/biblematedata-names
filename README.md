@@ -17,7 +17,7 @@ Curated, ready-to-use datasets are organized in the [`data/`](data/README.md) di
 * **[`data/tsv/`](data/tsv/README.md)** — Tab-separated datasets for spreadsheets, databases, and custom pipelines:
   * `bible_persons.tsv` (**3,119** entries): `PersonID`, `English`, `Traditional Chinese`, `Simplified Chinese`
   * `bible_locations.tsv` (**1,161** entries): `LocationID`, `English`, `Traditional Chinese`, `Simplified Chinese`, `Latitude`, `Longitude`
-  * `names_english_chinese_names_fixed.tsv` (**36,898** entries): Verse-level `book`, `chapter`, `verse`, `cu2010s`, `cu2010t`, `esvuk16`, `bsb`, `engulb` with 90 Chinese alignment fixes
+  * `names_english_chinese_names_fixed.tsv` (**36,898** entries): Verse-level `book`, `chapter`, `verse`, `cu1995s`, `cu1995t`, `rcuv2011s`, `rcuv2011t`, `esvuk16`, `bsb`, `engulb`, `exlb`, `exlb_id` aligned across CUV, RCUV, English versions, and EXLB IDs
   * `names_original_source_with_wrong_Chinese_names.tsv` (**36,898** entries): Original 20-column upstream source preserved for provenance
 * **[`data/python/`](data/python/README.md)** — Ready-to-import Python dictionaries:
   * `bible_locations.py`, `bible_locations_tc.py`, `bible_locations_sc.py` (**1,147** `LocationID` → `(Name, Latitude, Longitude)` entries each)
@@ -217,6 +217,23 @@ Performed a full cross-check of all **3,086** biblical person entries and **1,14
 3. **`exlb3.data` (`exlbp`, `exlbp_tc`, `exlbp_sc`: 3,088 → 3,119 rows each):**
    - Renamed tables `exlbp_TC` → `exlbp_tc` and `exlbp_SC` → `exlbp_sc` for consistent lowercase naming.
    - Added all **31** extra entries (`BP905`, `BP1324`, `BP3085`–`BP3113`) to `exlbp`, `exlbp_tc` (matching existing Traditional Chinese article formatting and derived from `BP7200`, `BP7000`, and unshifted `BP3056`–`BP3084`), and `exlbp_sc` (converted from `exlbp_tc` via `opencc -c t2s.json`), achieving **100%** `PersonID` parity across `exlbp`, `exlbp_tc`, `exlbp_sc`, and `data/tsv/bible_persons.tsv`.
+
+## Additions & Enrichment of `names_english_chinese_names_fixed.tsv` (and `exlb3.data` Cleanup)
+
+1. **RCUV Columns (`rcuv2011t` and `rcuv2011s`):**
+   - Added `rcuv2011t` right next to `cu1995t` by verifying and extracting the corresponding Traditional Chinese names from `RCUV.bible` (via the `/bible` retrieval skill):
+     - **36,622** of **36,898** rows (**99.25%**) populated, handling RCUV punctuation (`‧`, `．`), simplified-character leftovers, `併於上節` merged verses, Hebrew/Protestant versification offsets, and RCUV-specific renderings (e.g., `塞魯士` → `居魯士`, `上帝` → `神`, `睚魯` → `葉魯`, `觜加` → `敘加`, `觜拉古` → `敘拉古`, `猶大人` → `猶大`, `尼革夫` → `南方`).
+   - Added `rcuv2011s` between `cu1995t` and `rcuv2011t` by converting all **2,588** unique Traditional Chinese values in `rcuv2011t` to Simplified Chinese using `opencc` (`t2s.json`).
+
+2. **EXLB Name & ID Columns (`exlb` and `exlb_id`):**
+   - Added `exlb` and `exlb_id` at the end of `data/tsv/names_english_chinese_names_fixed.tsv` using `data/tsv/bible_persons.tsv` (`BP*`) and `data/tsv/bible_locations.tsv` (`BL*`), with verse-level disambiguation against `exlbp` and `exlbl` in `data/sqlite/exlb3.data`.
+   - **35,978** of **36,898** rows (**97.51%**) matched (`920` rows left empty where names/terms are absent from `bible_persons.tsv` / `bible_locations.tsv` or blank).
+
+3. **Filling Missing CUV Entries (`cu1995t` and `cu1995s`):**
+   - Populated **761** empty `cu1995t` entries (from `rcuv2011t`, `exlb`, `esvuk16`, `bsb`, and `engulb` verified against `CUV.bible` including versification offsets) and **763** empty `cu1995s` entries (converted via `opencc -c t2s.json`), reducing empty `cu1995t`/`cu1995s` rows to **113**.
+
+4. **`exlb3.data` Cleanup:**
+   - Removed the `exlbt_tc` table from `data/sqlite/exlb3.data` and vacuumed the database.
 
 
 
