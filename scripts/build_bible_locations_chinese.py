@@ -15,7 +15,7 @@ if repo_root not in sys.path:
     sys.path.insert(0, repo_root)
 
 from scripts.duplicate_exlbl_indexes2 import build_bl_mapping
-from scripts.bible_locations import BIBLE_LOCATIONS
+from data.python.bible_locations import BIBLE_LOCATIONS
 
 def main():
     print("Building canonical location mappings...")
