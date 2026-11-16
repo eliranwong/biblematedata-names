@@ -15,8 +15,8 @@ This project is to map biblical names in [biblematedata](https://github.com/elir
 Curated, ready-to-use datasets are organized in the [`data/`](data/README.md) directory in both TSV and Python formats, verified against the Chinese Union Version (CUV) and aligned across English, Traditional Chinese, and Simplified Chinese:
 
 * **[`data/tsv/`](data/tsv/README.md)** — Tab-separated datasets for spreadsheets, databases, and custom pipelines:
-  * `bible_persons.tsv` (**3,086** entries): `PersonID`, `English`, `Traditional Chinese`, `Simplified Chinese`
-  * `bible_locations.tsv` (**1,147** entries): `LocationID`, `English`, `Traditional Chinese`, `Simplified Chinese`, `Latitude`, `Longitude`
+  * `bible_persons.tsv` (**3,119** entries): `PersonID`, `English`, `Traditional Chinese`, `Simplified Chinese`
+  * `bible_locations.tsv` (**1,161** entries): `LocationID`, `English`, `Traditional Chinese`, `Simplified Chinese`, `Latitude`, `Longitude`
   * `names_english_chinese_names_fixed.tsv` (**36,898** entries): Verse-level `book`, `chapter`, `verse`, `cu2010s`, `cu2010t`, `esvuk16`, `bsb`, `engulb` with 90 Chinese alignment fixes
   * `names_original_source_with_wrong_Chinese_names.tsv` (**36,898** entries): Original 20-column upstream source preserved for provenance
 * **[`data/python/`](data/python/README.md)** — Ready-to-import Python dictionaries:
@@ -204,6 +204,19 @@ Performed a full cross-check of all **3,086** biblical person entries and **1,14
 
 5. **Upstream Contribution (`BibleNLP/biblical-names-data`):**
    - Synced all **90** corrected `cu2010t` / `cu2010s` rows to `names.tsv` in `BibleNLP/biblical-names-data` and submitted [Pull Request #2](https://github.com/BibleNLP/biblical-names-data/pull/2) (`eliranwong:fix-chinese-names` → `BibleNLP:main`).
+
+## Full Parity Alignment Between TSVs and `exlb3.data`
+
+1. **Biblical Locations (`data/tsv/bible_locations.tsv`: 1,147 → 1,161 entries):**
+   - Added the **14** `<nomap>` entries from `exlb3.data` (`exlbl`) that lacked coordinates (`BL9` *Abel-Mizraim*, `BL25` *Addon*, `BL112` *Atad*, `BL116` *Athach*, `BL190` *Ashbea*, `BL293` *Chinnereth*, `BL354` *Eden*, `BL371` *Elkoshite*, `BL381` *Eden*, `BL488` *Gomer*, `BL549` *Hazor*, `BL902` *Nod*, `BL922` *Parvaim*, `BL951` *Pison*), with CUV-verified Traditional/Simplified Chinese names and empty `Latitude`/`Longitude` fields, achieving **100%** `LocationID` parity with `exlb3.data` (`exlbl`).
+
+2. **Biblical Persons (`data/tsv/bible_persons.tsv`: 3,086 → 3,119 entries):**
+   - Added the **33** `exlbp` entries missing from `bible_persons.tsv` (`BP1565`, `BP2184`, `BP2187`, `BP2775`–`BP2800`, and `BP7000`–`BP7300`), verified against `exlb3.data`, `indexes2.sqlite`, and `CUV.bible`.
+   - Reordered `data/tsv/bible_persons.tsv` so all **3,088** `exlbp`-matched entries (`BP1`–`BP7500`) appear first in numerical order, followed by the **31** extra entries originating from `biblePeople.data` (`BP905` *Jesus Christ*, `BP1324` *God*, and ID-shifted tail entries `BP3085`–`BP3113`) at the end of the file.
+
+3. **`exlb3.data` (`exlbp`, `exlbp_tc`, `exlbp_sc`: 3,088 → 3,119 rows each):**
+   - Renamed tables `exlbp_TC` → `exlbp_tc` and `exlbp_SC` → `exlbp_sc` for consistent lowercase naming.
+   - Added all **31** extra entries (`BP905`, `BP1324`, `BP3085`–`BP3113`) to `exlbp`, `exlbp_tc` (matching existing Traditional Chinese article formatting and derived from `BP7200`, `BP7000`, and unshifted `BP3056`–`BP3084`), and `exlbp_sc` (converted from `exlbp_tc` via `opencc -c t2s.json`), achieving **100%** `PersonID` parity across `exlbp`, `exlbp_tc`, `exlbp_sc`, and `data/tsv/bible_persons.tsv`.
 
 
 
