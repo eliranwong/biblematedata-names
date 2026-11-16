@@ -6,7 +6,7 @@ This project is to map biblical names in [biblematedata](https://github.com/elir
 
 ## Credits:
 
-* Initial name mapping data is from [BibleNLP/biblical-names-data](https://github.com/BibleNLP/biblical-names-data).  I have modified the data to fit the format of biblematedata.
+* Initial name mapping data is from [BibleNLP/biblical-names-data](https://github.com/BibleNLP/biblical-names-data).  I have modified the data to fit the format of biblematedata, and contributed Chinese name corrections back upstream in [BibleNLP/biblical-names-data#2](https://github.com/BibleNLP/biblical-names-data/pull/2).
 
 * Bible retrieval skill for AI agents to work on the missing data: [biblemate-agentic-workspace](https://github.com/eliranwong/biblemate-agentic-workspace)
 
@@ -183,10 +183,13 @@ Performed a full cross-check of all **3,086** biblical person entries and **1,14
    - **`exlb3.data`:** Resolved the `BP*`-to-`PersonID` offset across all **3,088** `exlbp` entries (where `exlbp` and `biblePeople.data` diverged for 1,337 IDs, e.g., `BP2107` *Moses* vs. `PersonID 2107` *Mordecai*) by matching `(English name, First Occurrence)` against `PEOPLE`. Updated `<h2 exlbp="...">` headings and `<ref onclick="exlbp('BP...')">` links in `exlbp_TC` (**2,430** rows) and `exlbp_SC` (**2,429** rows), plus location headings and `exlbli_*` labels in `exlbl_tc`, `exlbl_sc`, `exlbli_tc`, and `exlbli_sc` (**10** rows each).
    - **`indexes2.sqlite`:** Updated `<ref onclick="exlbp('BP...')">` links in `exlbp_tc` (**19,233** rows) and `exlbp_sc` (**19,223** rows) using the aligned `BP*` mapping, and updated `<ref onclick="exlbl('BL...')">` links in `exlbl_tc` and `exlbl_sc` (**21** rows each). All three databases passed `PRAGMA integrity_check`.
 
-4. **Python Scripts & Alignment TSV (`scripts/` and `tsv/names_english_chinese_less.tsv`):**
-   - **`scripts/names_english_chinese.py`** (**84** lines updated) and **`tsv/names_english_chinese_less.tsv`** (**90** rows updated): Fixed shifted-alignment common words (`兒子`, `妻子`, `生`, `女兒`, `王`, `上書`, `玄孫`, `曾孫`, `族長`, `地方`, etc.), mismatched names, Simplified characters, and spaces in both `cu2010t` and `cu2010s`.
+4. **Python Scripts & Alignment TSV (`scripts/` and `tsv/names_english_chinese_names_fixed.tsv`):**
+   - **`scripts/names_english_chinese.py`** (**84** lines updated) and **`tsv/names_english_chinese_names_fixed.tsv`** (formerly `tsv/names_english_chinese_less.tsv`, **90** rows updated): Fixed shifted-alignment common words (`兒子`, `妻子`, `生`, `女兒`, `王`, `上書`, `玄孫`, `曾孫`, `族長`, `地方`, etc.), mismatched names, Simplified characters, and spaces in both `cu2010t` and `cu2010s`.
    - **`scripts/bible_names_tc.py`** & **`scripts/bible_names_sc.py`:** Fixed **16** erroneous/spaced/Simplified-character keys and headings in `bible_names_tc.py` (**2,396** entries after deduplication) and regenerated `bible_names_sc.py` via `scripts/build_bible_names_sc.py`.
    - **`scripts/bible_locations_tc.py`** & **`scripts/bible_locations_sc.py`:** Updated **9** location entries in each file.
+
+5. **Upstream Contribution (`BibleNLP/biblical-names-data`):**
+   - Synced all **90** corrected `cu2010t` / `cu2010s` rows to `names.tsv` in `BibleNLP/biblical-names-data` and submitted [Pull Request #2](https://github.com/BibleNLP/biblical-names-data/pull/2) (`eliranwong:fix-chinese-names` → `BibleNLP:main`).
 
 
 
