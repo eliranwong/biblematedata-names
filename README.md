@@ -15,7 +15,7 @@ This project is to map biblical names in [biblematedata](https://github.com/elir
 Curated, ready-to-use datasets are organized in the [`data/`](data/README.md) directory in both TSV and Python formats, verified against the Chinese Union Version (CUV) and aligned across English, Traditional Chinese, and Simplified Chinese:
 
 * **[`data/tsv/`](data/tsv/README.md)** — Tab-separated datasets for spreadsheets, databases, and custom pipelines:
-  * `bible_persons.tsv` (**3,119** entries): `PersonID`, `English`, `Traditional Chinese`, `Simplified Chinese`
+  * `bible_persons.tsv` (**3,119** entries): `PersonID`, `English`, `Traditional Chinese`, `Simplified Chinese`, `exlb3`
   * `bible_locations.tsv` (**1,161** entries): `LocationID`, `English`, `Traditional Chinese`, `Simplified Chinese`, `Latitude`, `Longitude`
   * `names_english_chinese_names_fixed.tsv` (**36,898** entries): Verse-level `book`, `chapter`, `verse`, `cu1995s`, `cu1995t`, `rcuv2011s`, `rcuv2011t`, `esvuk16`, `bsb`, `engulb`, `exlb`, `exlb_id` aligned across CUV, RCUV, English versions, and EXLB IDs
   * `names_original_source_with_wrong_Chinese_names.tsv` (**36,898** entries): Original 20-column upstream source preserved for provenance
@@ -234,6 +234,20 @@ Performed a full cross-check of all **3,086** biblical person entries and **1,14
 
 4. **`exlb3.data` Cleanup:**
    - Removed the `exlbt_tc` table from `data/sqlite/exlb3.data` and vacuumed the database.
+
+## `exlb3.data` (`exlbp`) PersonID Alignment Fix
+
+1. **Verification (`data/tsv/bible_persons.tsv` & `data/tsv/bible_persons_exlb3_verification.md`):**
+   - Added the `exlb3` column to `data/tsv/bible_persons.tsv` (**3,119** rows) extracted from `<h2 exlbp="...">...</h2>` titles in `data/sqlite/exlb3.data` (`exlbp`).
+   - Identified **1,089** true mismatches between `English` and `exlb3` caused by `exlbp.path` offsets relative to `bible_persons.tsv` / `biblePeople.data` (including `BP691` *Jahath* vs. *Shimei*, a `-1` shift from `BP1566` *Hul* to `BP2774`, and a `-29` shift from `BP2801` to `BP3084` where e.g. `BP2821`–`BP2823` *Tamar* pointed to *Theudas*, *Thomas/Didymus*, and *Tiberius*). Documented all details in `data/tsv/bible_persons_exlb3_verification.md`.
+
+2. **Mapping & Fix (`data/tsv/exlb3_personid_mapping.tsv` & `data/sqlite/exlb3.data`):**
+   - Generated a verified 3,119-row mapping in `data/tsv/exlb3_personid_mapping.tsv` (`1,626` `keep`, `1,491` `remap`, `2` `clone`).
+   - Rebuilt `exlbp`, `exlbp_tc`, and `exlbp_sc` (**3,119** rows each) in `data/sqlite/exlb3.data` using this mapping and updated `<h2 exlbp="...">` attributes inside `content` to match each target `PersonID`.
+   - Re-extracted `exlb3` into `data/tsv/bible_persons.tsv`, reducing non-matching rows from **1,089** to **2** non-shift differences (`BP2052` *Micah* vs. *Michah*, and `BP7500` *The Angel* vs. *Reference To A Bodily Appearence of God*).
+
+3. **Downstream Checks (`names_english_chinese_names_fixed.tsv` & `exlb.db`):**
+   - Verified all **28,332** `BP*` rows in `data/tsv/names_english_chinese_names_fixed.tsv` and all **3,119** rows each in `exlbp`, `exlbp_tc`, and `exlbp_sc` of `data/sqlite/exlb.db` against `data/tsv/bible_persons.tsv` (**0** mismatches).
 
 
 
