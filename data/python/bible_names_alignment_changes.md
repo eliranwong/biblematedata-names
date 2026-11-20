@@ -1,6 +1,6 @@
 # Bible Names Alignment Documentation
 
-This document records all alignments made to dictionary keys in [scripts/bible_names.py](file:///home/eliran/dev/biblematedata-names/scripts/bible_names.py) (and synchronized in [scripts/bible_names_tc.py](file:///home/eliran/dev/biblematedata-names/scripts/bible_names_tc.py) and [scripts/bible_names_sc.py](file:///home/eliran/dev/biblematedata-names/scripts/bible_names_sc.py)) to match the authoritative English names used in [tsv/bible_locations.tsv](file:///home/eliran/dev/biblematedata-names/tsv/bible_locations.tsv) and [tsv/bible_persons.tsv](file:///home/eliran/dev/biblematedata-names/tsv/bible_persons.tsv).
+This document records all alignments made to dictionary keys in [bible_names_aligned_with_exlb.py](bible_names_aligned_with_exlb.py) (and synchronized in [bible_names_tc.py](bible_names_tc.py) and [bible_names_sc.py](bible_names_sc.py)) to match the authoritative English names used in [../tsv/bible_locations.tsv](../tsv/bible_locations.tsv) and [../tsv/bible_persons.tsv](../tsv/bible_persons.tsv).
 
 ## 1. Executive Summary
 

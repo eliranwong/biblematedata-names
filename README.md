@@ -1,6 +1,6 @@
 # biblematedata-names
 
-[BibleMateData](https://github.com/eliranwong/biblematedata) is a separate project to provide data for [BibleMate AI Projects](https://github.com/eliranwong/biblemate).
+[BibleMateData](https://github.com/eliranwong/biblematedata) is a separate project to provide data for [BibleMate AI Projects](https://github.com/eliranwong/biblemate) ([Web Demo](https://web.biblemate.ai)).
 
 This project is to map biblical names in [biblematedata](https://github.com/eliranwong/biblematedata) from English to Traditional and Simplified Chinese, and to numbered book IDs.
 
